@@ -18,6 +18,10 @@ If you used `jstack`, the requests you're looking for may never have made it int
 
 I'll use that connection-pool scenario throughout this article. The numbers and dump excerpts are illustrative. I run ThreadMine, and its support for these formats needs some explanation too; I'll get to that after the commands.
 
+If you'd rather watch the flow end to end first, this two-minute walkthrough goes from capturing the dump to sharing the report:
+
+{{< youtube mV39ax1wj5I >}}
+
 ## The carrier can be idle while the request waits
 
 `jstack` and `jcmd <pid> Thread.print` show platform threads. That includes the carriers, the scheduler workers on which virtual threads run. When a virtual thread unmounts to wait for I/O or another resource, its carrier is free to run something else.
